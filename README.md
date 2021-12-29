@@ -1,2 +1,2 @@
 # Bootcamp-MRV
-Repositório de estudos para bootcamp MRV.
+Repositório de estudos para Bootcamp MRV.
