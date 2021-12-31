@@ -1,0 +1,22 @@
+
+
+#title{
+    text-align: center;
+    background-color: darkgoldenrod;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.apresentacao{
+    margin: 50px;
+    text-align: center;
+    background-color: darkgray;
+}
+
+.mestre_mundo{
+    width: 100%;
+}
+
+.footer{
+    padding: 20px;
+}
