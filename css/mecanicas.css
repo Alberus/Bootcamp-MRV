@@ -1,4 +1,17 @@
 .corpo{
     margin: 20px;
     background-color: burlywood;
+
+    
+	align-items: center;
+	justify-content: center;
+	font-family: 'Quicksand', sans-serif;
+	height: 100vh;
+    text-align: center;
 }
+
+img {
+	max-width: 600px;
+	border-radius: 30px;
+}
+
