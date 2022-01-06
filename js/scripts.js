@@ -36,3 +36,74 @@ const loadImg = async () => {
 catBtn.addEventListener('click', loadImg)
 
 loadImg()
+
+class ContaBancaria {
+    constructor(agencia, numero, tipo) {
+        this.agencia = agencia;
+        this.numero = numero;
+        this.tipo = tipo;
+        this._saldo = 0;
+    }
+    get saldo() {
+        return this._saldo;
+    }
+
+    set saldo(valor) {
+        this._saldo = valor;
+    }
+
+    sacar(valor){
+        if (valor <= this.saldo) {
+            return "Operação negada. Não há saldo suficiente. Vá trabalhar..."
+        }
+        this.saldo = this.saldo - valor;
+        return `Seu saldo atual é ${this.saldo}`
+    }
+
+    depositar(valor) {
+        this.saldo = this.saldo + valor;
+        return `Seu saldo atual é ${this.saldo}` 
+    }
+}
+
+class ContaCorrente extends ContaBancaria {
+    constructor(agencia, numero, cardCredito) {
+        super(agencia, numero);
+        this.tipo = `Conta Corrente`;
+        this._cardCredito = cardCredito;
+    }
+
+    get cardCredito() {
+        return this._cardCredito;
+    }
+
+    set cardCredito(valor) {
+        this._cardCredito = valor
+    }
+}
+
+class ContaPoupanca extends ContaBancaria {
+    constructor(agencia, numero) {
+        super(agencia, numero, saldo);
+        this.tipo = `Conta Poupança`;
+    }
+}
+
+class ContaUniversitaria extends ContaBancaria {
+    constructor(agencia, numero) {
+        super(agencia, numero);
+        this.tipo = `Conta Universitária`;
+    }
+
+    sacar(valor) {
+        if (valor > 500) {
+            return `A operação não pode ser realizada`;
+        } else if (valor > this.saldo) {
+            return `Saldo insuficiente`;
+        }
+        else {
+            this.saldo = this.saldo - valor;
+            return `Seu saldo atual é ${this.saldo}` 
+        }
+    }
+}
